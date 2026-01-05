@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Curriculum Builder | Your AI Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="w-full h-screen p-4 flex items-center justify-center">
+    <div id="aurora-background">
+        <div class="aurora-blob blob-1"></div>
+        <div class="aurora-blob blob-2"></div>
+        <div class="aurora-blob blob-3"></div>
+    </div>
+
+    <main class="w-full h-full max-w-7xl mx-auto glass-card rounded-2xl relative overflow-hidden">
+        
+        <!-- Page 1: Home Page -->
+        <div id="home-page" class="page z-20 flex flex-col items-center justify-center text-center" style="transform: translateX(0%);">
+             <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-full inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold mt-6" style="color: var(--text-color);">Welcome to the CAREER PATHWAY</h1>
+            <p class="text-lg mt-4 max-w-2xl" style="color: var(--text-muted);">Create a hyper-personalized learning pathway, validated by AI and tailored to your unique goals and learning style.</p>
+            <button id="start-journey-btn" class="mt-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                Start Building
+            </button>
+        </div>
+
+        <!-- Page 2: Form Page -->
+        <div id="form-page" class="page z-10 flex flex-col" style="transform: translateX(100%);">
+            <h2 class="text-3xl font-bold mb-1">Build Your Profile</h2>
+            <p class="text-sm mb-6 text-[var(--text-muted)]">The more details you provide, the better the plan.</p>
+            <form id="skill-form" class="flex-grow flex flex-col space-y-4 overflow-y-auto pr-2">
+                <div>
+                    <label for="goal-input" class="block text-sm font-semibold text-[var(--text-muted)]">Ultimate Goal</label>
+                    <input type="text" id="goal-input" placeholder="e.g., Become a Data Analyst" class="mt-1 w-full p-2.5 rounded-md bg-transparent border-2 border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] transition-all" required>
+                </div>
+                <div>
+                    <label for="skill-input" class="block text-sm font-semibold text-[var(--text-muted)]">Skills to Learn</label>
+                    <input type="text" id="skill-input" placeholder="e.g., Python, SQL, Tableau" class="mt-1 w-full p-2.5 rounded-md bg-transparent border-2 border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] transition-all" required>
+                     <p class="text-xs text-[var(--text-muted)] mt-1">Separate skills with a comma.</p>
+                </div>
+                <div>
+                    <label for="current-role-input" class="block text-sm font-semibold text-[var(--text-muted)]">Current Role / Field of Study</label>
+                    <input type="text" id="current-role-input" placeholder="e.g., Marketing Manager" class="mt-1 w-full p-2.5 rounded-md bg-transparent border-2 border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] transition-all" required>
+                </div>
+                <div>
+                    <label for="time-commitment-input" class="block text-sm font-semibold text-[var(--text-muted)]">Weekly Time Commitment</label>
+                    <input type="text" id="time-commitment-input" placeholder="e.g., 5-10 hours" class="mt-1 w-full p-2.5 rounded-md bg-transparent border-2 border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] transition-all" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-[var(--text-muted)]">Preferred Learning Style</label>
+                    <select id="learning-style-input" class="mt-1 w-full p-2.5 rounded-md bg-transparent border-2 border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] transition-all" required>
+                        <option>Video Tutorials</option>
+                        <option>Reading Books / Articles</option>
+                        <option>Hands-on Projects</option>
+                        <option>Mix of all</option>
+                    </select>
+                </div>
+                 <div>
+                    <label class="block text-sm font-semibold text-[var(--text-muted)]">Budget for Courses</label>
+                    <select id="budget-input" class="mt-1 w-full p-2.5 rounded-md bg-transparent border-2 border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] transition-all" required>
+                        <option>Free resources only</option>
+                        <option>Willing to pay for high-quality courses</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="additional-notes-input" class="block text-sm font-semibold text-[var(--text-muted)]">Additional Notes (Optional)</label>
+                    <textarea id="additional-notes-input" placeholder="e.g., I have a design background and want to focus on mobile..." rows="2" class="mt-1 w-full p-2.5 rounded-md bg-transparent border-2 border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] transition-all"></textarea>
+                </div>
+
+                <div class="!mt-auto pt-4 flex gap-4">
+                     <button type="button" id="back-to-home-btn" class="w-1/3 py-3 px-6 text-center font-semibold rounded-lg border-2 border-[var(--border-color)] hover:bg-[var(--border-color)]/50 transition-colors">
+                        Back
+                    </button>
+                    <button type="submit" id="generate-btn" class="w-2/3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-lg text-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Generate My Curriculum
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Page 3: Roadmap -->
+        <div id="roadmap-page" class="page" style="transform: translateX(100%);">
+            <div id="loader" class="hidden h-full flex flex-col justify-center">
+                 <h3 class="text-2xl font-bold text-center mb-6">Crafting Your Curriculum...</h3>
+                 <ul id="loading-steps" class="space-y-4"></ul>
+            </div>
+
+            <div id="roadmap-container" class="hidden h-full flex flex-col">
+                <h2 id="output-title" class="text-3xl font-bold mb-8"></h2>
+                <div id="alignment-warning" class="mb-6"></div>
+                <div id="roadmap-stepper" class="flex items-center justify-center mb-8"></div>
+                <div id="roadmap-content" class="flex-grow"></div>
+                <button id="start-over-btn" class="mt-8 w-full py-2.5 text-center font-semibold rounded-lg border-2 border-[var(--border-color)] hover:bg-[var(--border-color)]/50 transition-colors">Create a New Plan</button>
+            </div>
+            
+            <div id="output-error" class="hidden p-4"></div>
+        </div>
+        
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
